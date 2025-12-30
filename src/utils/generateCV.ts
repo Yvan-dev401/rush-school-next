@@ -36,7 +36,7 @@ export async function generateCV({ user }: CVData): Promise<void> {
     pdf.setDrawColor(...secondaryColor);
     pdf.setLineWidth(0.5);
     pdf.line(margin, yPosition, pageWidth - margin, yPosition);
-    yPosition += 5;
+    yPosition += 8;
   };
 
   // ===================== HEADER =====================
@@ -133,7 +133,7 @@ export async function generateCV({ user }: CVData): Promise<void> {
       xPosition += skillWidth + skillGap;
     }
     
-    yPosition += 15;
+    yPosition += 20;
   }
 
   // ===================== EXPÉRIENCES PROFESSIONNELLES =====================
@@ -181,7 +181,7 @@ export async function generateCV({ user }: CVData): Promise<void> {
         yPosition += (descLines.length * 5);
       }
       
-      yPosition += 8;
+      yPosition += 12;
     }
   }
 
@@ -221,7 +221,7 @@ export async function generateCV({ user }: CVData): Promise<void> {
       pdf.setFont('helvetica', 'normal');
       pdf.text(edu.school || '', margin, yPosition);
       
-      yPosition += 10;
+      yPosition += 14;
     }
   }
 
@@ -260,7 +260,7 @@ export async function generateCV({ user }: CVData): Promise<void> {
   pdf.setTextColor(...lightGray);
   pdf.setFontSize(8);
   pdf.setFont('helvetica', 'italic');
-  pdf.text(`CV généré le ${new Date().toLocaleDateString('fr-FR')} - Rush School`, pageWidth / 2, footerY, { align: 'center' });
+  pdf.text(`CV généré le ${new Date().toLocaleDateString('fr-FR')}`, pageWidth / 2, footerY, { align: 'center' });
 
   // Télécharger le PDF
   const fileName = `CV_${user.firstName}_${user.lastName}.pdf`.replace(/\s+/g, '_');

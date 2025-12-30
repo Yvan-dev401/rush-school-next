@@ -19,7 +19,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-blue-900 mb-6">
-            Bienvenue sur Rush School
+            Bienvenue sur Mon app
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
             Gérez votre profil professionnel et exportez votre CV en un clic.

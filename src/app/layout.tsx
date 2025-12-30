@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rush School",
+  title: "Mon app",
   description: "Plateforme de gestion de profil et CV",
 };
 

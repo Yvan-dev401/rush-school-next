@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const MONGODB_URI = process.env.MONGODB_URI!;
 
 if (!MONGODB_URI) {
-  throw new Error('Veuillez définir MONGODB_URI dans .env.local');
+  throw new Error('Veuillez définir MONGODB_URI dans .env');
 }
 
 interface MongooseCache {

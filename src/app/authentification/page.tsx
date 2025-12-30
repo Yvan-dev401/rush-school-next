@@ -32,7 +32,7 @@ export default function LoginPage() {
           Connexion
         </h1>
         <p className="text-gray-600 text-center mb-8">
-          Accédez à votre compte RushSchool
+          Accédez à votre compte Mon app
         </p>
 
         {error && (
