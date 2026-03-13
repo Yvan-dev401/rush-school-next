@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileLines, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -54,7 +56,9 @@ export default function Home() {
 
         <div className="mt-20 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <div className="text-4xl mb-4">📝</div>
+            <div className="text-4xl mb-4">
+              <FontAwesomeIcon icon={faUser} />
+            </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               Gérez votre profil
             </h3>
@@ -64,7 +68,9 @@ export default function Home() {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <div className="text-4xl mb-4">📄</div>
+            <div className="text-4xl mb-4">
+              <FontAwesomeIcon icon={faFileLines} />
+            </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               Exportez en PDF
             </h3>
@@ -74,7 +80,9 @@ export default function Home() {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <div className="text-4xl mb-4">🔒</div>
+            <div className="text-4xl mb-4">
+              <FontAwesomeIcon icon={faLock} />
+            </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               Sécurisé
             </h3>

@@ -5,6 +5,15 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { User, Experience, Education } from '@/types';
 import generateCV from '@/utils/generateCV';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFileExport,
+  faFloppyDisk,
+  faPenToSquare,
+  faRightFromBracket,
+  faTrash,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function ProfilePage() {
   const { user, isAuthenticated, isLoading: authLoading, logout, updateUser } = useAuth();
@@ -158,7 +167,8 @@ export default function ProfilePage() {
               onClick={() => setIsEditing(true)}
               className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
             >
-              ✏️ Modifier
+              <FontAwesomeIcon icon={faPenToSquare} />
+              Modifier
             </button>
           ) : (
             <>
@@ -167,7 +177,8 @@ export default function ProfilePage() {
                 disabled={isSaving}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors flex items-center gap-2 disabled:opacity-50"
               >
-                💾 {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
+                <FontAwesomeIcon icon={faFloppyDisk} />
+                {isSaving ? 'Sauvegarde...' : 'Sauvegarder'}
               </button>
               <button
                 onClick={() => {
@@ -176,7 +187,8 @@ export default function ProfilePage() {
                 }}
                 className="px-4 py-2 bg-gray-500 text-white rounded-lg font-medium hover:bg-gray-600 transition-colors flex items-center gap-2"
               >
-                ❌ Annuler
+                <FontAwesomeIcon icon={faXmark} />
+                Annuler
               </button>
             </>
           )}
@@ -184,13 +196,15 @@ export default function ProfilePage() {
             onClick={exportToPDF}
             className="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-colors flex items-center gap-2"
           >
-            📄 Exporter CV
+            <FontAwesomeIcon icon={faFileExport} />
+            Exporter CV
           </button>
           <button
             onClick={logout}
             className="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors flex items-center gap-2"
           >
-            🚪 Déconnexion
+            <FontAwesomeIcon icon={faRightFromBracket} />
+            Déconnexion
           </button>
         </div>
       </header>
@@ -330,7 +344,7 @@ export default function ProfilePage() {
                     onClick={() => removeSkill(index)}
                     className="text-red-500 hover:text-red-700"
                   >
-                    ×
+                    <FontAwesomeIcon icon={faXmark} />
                   </button>
                 )}
               </span>
@@ -378,7 +392,7 @@ export default function ProfilePage() {
                       onClick={() => removeExperience(index)}
                       className="absolute top-2 right-2 text-red-500 hover:text-red-700"
                     >
-                      🗑️
+                      <FontAwesomeIcon icon={faTrash} />
                     </button>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <input
@@ -452,7 +466,7 @@ export default function ProfilePage() {
                       onClick={() => removeEducation(index)}
                       className="absolute top-2 right-2 text-red-500 hover:text-red-700"
                     >
-                      🗑️
+                      <FontAwesomeIcon icon={faTrash} />
                     </button>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <input
